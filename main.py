@@ -26,6 +26,7 @@ class Application(tk.Frame):
         print("hi there, everyone!")
 
 root = tk.Tk()
+root.title("Pomodoro Timer")
 root.geometry("500x200")
 app = Application(master=root)
 app.update()
