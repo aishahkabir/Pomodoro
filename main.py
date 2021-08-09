@@ -13,10 +13,11 @@ class Application(tk.Frame):
         self.label = tk.Label(self)
         self.label["text"] = self.time_now
         self.label.pack()
-
-        self.quit = tk.Button(self, text="QUIT", fg="red",
+        self.start = tk.Button(self, text="Start timer", fg="blue")
+        self.start.pack(side="left")
+        self.quit = tk.Button(self, text="Quit", fg="red",
                               command=self.master.destroy)
-        self.quit.pack(side="bottom")
+        self.quit.pack(side="right")
 
     def update(self):
         self.label["text"] = datetime.now().strftime("%H:%M:%S")
