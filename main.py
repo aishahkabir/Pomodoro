@@ -15,9 +15,11 @@ class Application(tk.Frame):
         self.label.pack()
         self.start = tk.Button(self, text="Start timer", fg="blue")
         self.start.pack(side="left")
+        self.start = tk.Button(self, text="Stop timer", fg="green")
+        self.start.pack(side="right")
         self.quit = tk.Button(self, text="Quit", fg="red",
                               command=self.master.destroy)
-        self.quit.pack(side="right")
+        self.quit.pack(side="bottom")
 
     def update(self):
         self.label["text"] = datetime.now().strftime("%H:%M:%S")
