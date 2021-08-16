@@ -2,6 +2,10 @@ import tkinter as tk
 from datetime import datetime
 
 class Application(tk.Frame):
+    """
+    A pomodoro timer window
+    """
+
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master
@@ -10,6 +14,9 @@ class Application(tk.Frame):
         self.t = 1500
 
     def create_widgets(self):
+        """
+        Create all the buttons and labels in window.
+        """
         self.time_now = datetime.now().strftime("%H:%M:%S")
         self.label = tk.Label(self)
         self.label["text"] = self.time_now
@@ -23,6 +30,9 @@ class Application(tk.Frame):
         self.quit.pack(side="bottom")
 
     def update(self):
+        """
+        Updates timer every second counting down.
+        """
         if self.t > 0:
             seconds = self.t % (24 * 3600)
             seconds %= 3600
